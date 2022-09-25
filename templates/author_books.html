@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    auther
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5" style="height: 800px;">
+  <div class="row">
+    {% for author_book in author_books %}
+    <div class="card mx-5" style="width: 18rem;">
+      <img class="card-img-top" src="{{author_book.book_image.url}}" alt="" style="height: 200px;">
+      <h2  class="card-title" style="height: 76.8px;">{{ author_book.book_name }}</h2>
+      <p  class="card-text">{{ author_book.book_author }}</p>
+      <a href="{% url 'addcart' author_book.id %}" class="btn btn-dark mb-0">Add to cart</a>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

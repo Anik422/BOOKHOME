@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    branches
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5" style="height: 800px;">
+  <div class="row">
+  
+    {% for ar in bjs %}  
+    <a href="">{{ar.DICSTRINM}}</a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

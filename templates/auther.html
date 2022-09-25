@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    auther
+{% endblock title %}
+
+{% block content %}
+<section style="height: 800px; border: 10px solid red;">
+  
+    <div class="row" style="margin: 50px 50px 50px 50px;">
+      {% for author_name in author_names %}
+      <div class="card mx-5" style="width: 18rem;">
+        <img src="{{ author_name.auther_image.url }}" class="card-img-top" style="height: 200px;">
+        <div class="card-body" style="text-align: center;">
+        <a href="{% url 'author_books' author_name.id %}"><button class="btn btn btn-info">{{ author_name.author_name }}</button></a>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- <div class="col-sm-3">
+  <img src="{{ author_name.auther_image.url }}" alt="">
+<a href="{ url 'author_books' author_name.id }">{{ author_name.author_name }}</a>
+</div> -->
+{% endblock %}
+
